@@ -1,0 +1,78 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <!-- Name Input Field -->
+    <EditText
+        android:id="@+id/edit_name"
+        android:hint="Enter Name"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:inputType="textPersonName"
+        android:background="@drawable/custom_input_background"
+        android:padding="12dp"
+        android:elevation="4dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/dark_red"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Age Input Field -->
+    <EditText
+        android:id="@+id/edit_age"
+        android:hint="Enter Age"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:inputType="number"
+        android:background="@drawable/custom_input_background"
+        android:padding="12dp"
+        android:elevation="4dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/dark_red"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Grade Input Field -->
+    <EditText
+        android:id="@+id/edit_grade"
+        android:hint="Enter Grade"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:inputType="number"
+        android:background="@drawable/custom_input_background"
+        android:padding="12dp"
+        android:elevation="4dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/dark_red"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Major Input Field -->
+    <EditText
+        android:id="@+id/edit_major"
+        android:hint="Enter Major (Optional)"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:inputType="text"
+        android:background="@drawable/custom_input_background"
+        android:padding="12dp"
+        android:elevation="4dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/dark_red"
+        android:layout_marginBottom="24dp"/>
+
+    <!-- Submit Button -->
+    <Button
+        android:id="@+id/submit_button"
+        android:text="Submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/dark_red"
+        android:padding="12dp"
+        android:textColor="@color/white"
+        android:elevation="6dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:cornerRadius="8dp"/>
+</LinearLayout>
