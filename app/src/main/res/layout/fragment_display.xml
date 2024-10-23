@@ -66,5 +66,15 @@
     </androidx.cardview.widget.CardView>
 
 
-
+    <Button
+        android:id="@+id/go_back_btn"
+        android:text="Go to previous"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="12dp"
+        android:backgroundTint="@color/dark_red"
+        android:textColor="@color/white"
+        android:layout_marginTop="16dp"
+        android:radius="8dp"/>
 </LinearLayout>
