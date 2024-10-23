@@ -12,16 +12,16 @@
         android:layout_height="0dp"
         android:layout_weight="1"/>
 
-    <!-- Button to navigate to the display fragment -->
     <Button
         android:id="@+id/button_show_data"
         android:text="Show Entered Data"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:padding="12dp"
-        android:backgroundTint="@color/dark_red"
+        android:backgroundTint="@color/black"
         android:textColor="@color/white"
         android:layout_marginTop="16dp"
         android:radius="8dp"/>
+
 </LinearLayout>
