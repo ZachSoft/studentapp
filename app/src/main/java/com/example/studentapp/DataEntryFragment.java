@@ -1,4 +1,7 @@
+package com.example.studentapp;
+
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.widget.Button;
 import android.widget.EditText;
 
