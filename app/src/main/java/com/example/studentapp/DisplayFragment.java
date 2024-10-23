@@ -20,10 +20,10 @@ public class DisplayFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_display, container, false);
 
         // Find TextViews
-        textName = view.findViewById(R.id.text_name);
-        textAge = view.findViewById(R.id.text_age);
-        textGrade = view.findViewById(R.id.text_grade);
-        textMajor = view.findViewById(R.id.text_major);
+        textName = view.findViewById(R.id.display_name);
+        textAge = view.findViewById(R.id.display_age);
+        textGrade = view.findViewById(R.id.display_grade);
+        textMajor = view.findViewById(R.id.display_major);
 
         // Get data from Bundle
         Bundle bundle = getArguments();
