@@ -76,7 +76,29 @@
         android:layout_marginBottom="20dp"
         android:radius="8dp"/>
 
+    <!-- Title TextView -->
+    <TextView
+        android:id="@+id/text_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Student Information Form"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="8dp"/>
 
-    <!-- Button to navigate to the display fragment -->
+    <!-- Subtitle TextView -->
+    <TextView
+        android:id="@+id/text_subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Please fill in the fields above and click Submit to continue."
+        android:textSize="16sp"
+        android:gravity="center"
+        android:textColor="@color/dark_red"
+        android:layout_marginBottom="16dp"/>
 
 </LinearLayout>
+
