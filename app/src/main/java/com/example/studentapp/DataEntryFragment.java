@@ -17,6 +17,21 @@ public class DataEntryFragment extends Fragment {
 
     private EditText editName, editAge, editGrade, editMajor;
     private Button submitButton;
+    private OnDataSubmitListener dataSubmitListener;  // Define the listener
+
+    public interface OnDataSubmitListener {
+        void onDataSubmit(Bundle data);  // Method to pass data to the activity
+    }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        if (context instanceof OnDataSubmitListener) {
+            dataSubmitListener = (OnDataSubmitListener) context;  // Initialize listener
+        } else {
+            throw new ClassCastException(context.toString() + " must implement OnDataSubmitListener");
+        }
+    }
 
     @Nullable
     @Override
@@ -59,18 +74,15 @@ public class DataEntryFragment extends Fragment {
             return;
         }
 
-        // If all inputs are valid, send data to the activity
-        if (getActivity() != null) {
-            // Bundle to pass data
-            Bundle bundle = new Bundle();
-            bundle.putString("name", name);
-            bundle.putString("age", age);
-            bundle.putString("grade", grade);
-            bundle.putString("major", major.isEmpty() ? "N/A" : major);
+        // If all inputs are valid, send data via the listener
+        Bundle bundle = new Bundle();
+        bundle.putString("name", name);
+        bundle.putString("age", age);
+        bundle.putString("grade", grade);
+        bundle.putString("major", major.isEmpty() ? "N/A" : major);
 
-            // Replace current fragment with DisplayFragment
-            MainActivity activity = (MainActivity) getActivity();
-            activity.displayStudentData(bundle);
+        if (dataSubmitListener != null) {
+            dataSubmitListener.onDataSubmit(bundle);  // Pass data to the activity
         }
     }
 
@@ -84,4 +96,5 @@ public class DataEntryFragment extends Fragment {
         }
     }
 }
+
 
