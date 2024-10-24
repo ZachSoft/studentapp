@@ -17,55 +17,71 @@ public class DataEntryFragment extends Fragment {
 
     private EditText editName, editAge, editGrade, editMajor;
     private Button submitButton;
-    private OnDataSubmitListener dataSubmitListener;
-
-    // Interface to communicate with the MainActivity
-    public interface OnDataSubmitListener {
-        void onDataSubmit(String name, String age, String grade, String major);
-    }
-
-    @Override
-    public void onAttach(@NonNull Context context) {
-        super.onAttach(context);
-        if (context instanceof OnDataSubmitListener) {
-            dataSubmitListener = (OnDataSubmitListener) context;
-        } else {
-            throw new RuntimeException(context.toString() + " must implement OnDataSubmitListener");
-        }
-    }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_data_entry, container, false);
 
-        // Find input fields
+        // Find views
         editName = view.findViewById(R.id.edit_name);
         editAge = view.findViewById(R.id.edit_age);
         editGrade = view.findViewById(R.id.edit_grade);
         editMajor = view.findViewById(R.id.edit_major);
         submitButton = view.findViewById(R.id.submit_button);
 
-        // Submit button click listener
-        submitButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String name = editName.getText().toString();
-                String age = editAge.getText().toString();
-                String grade = editGrade.getText().toString();
-                String major = editMajor.getText().toString();
-
-                // Validate inputs (simple validation example)
-                if (name.isEmpty() || age.isEmpty() || grade.isEmpty()) {
-                    Toast.makeText(getActivity(), "Please fill all required fields", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-                // Send the data to MainActivity
-                dataSubmitListener.onDataSubmit(name, age, grade, major);
-            }
-        });
+        // Set button click listener
+        submitButton.setOnClickListener(v -> submitData());
 
         return view;
     }
+
+    private void submitData() {
+        // Get input values
+        String name = editName.getText().toString().trim();
+        String age = editAge.getText().toString().trim();
+        String grade = editGrade.getText().toString().trim();
+        String major = editMajor.getText().toString().trim();
+
+        // Validate inputs
+        if (name.isEmpty()) {
+            editName.setError("Name is required");
+            return;
+        }
+
+        if (age.isEmpty() || !isNumeric(age)) {
+            editAge.setError("Valid age is required");
+            return;
+        }
+
+        if (grade.isEmpty() || !isNumeric(grade)) {
+            editGrade.setError("Valid grade is required");
+            return;
+        }
+
+        // If all inputs are valid, send data to the activity
+        if (getActivity() != null) {
+            // Bundle to pass data
+            Bundle bundle = new Bundle();
+            bundle.putString("name", name);
+            bundle.putString("age", age);
+            bundle.putString("grade", grade);
+            bundle.putString("major", major.isEmpty() ? "N/A" : major);
+
+            // Replace current fragment with DisplayFragment
+            MainActivity activity = (MainActivity) getActivity();
+            activity.displayStudentData(bundle);
+        }
+    }
+
+    // Utility method to check if a string is a number
+    private boolean isNumeric(String str) {
+        try {
+            Integer.parseInt(str);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
 }
+
