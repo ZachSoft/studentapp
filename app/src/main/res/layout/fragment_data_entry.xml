@@ -10,7 +10,7 @@
         android:id="@+id/text_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Student Information Form"
+        android:text="Student Information input"
         android:textSize="22sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -24,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Please fill in the fields above and click Submit to continue."
-        android:textSize="16sp"
+        android:textSize="15sp"
         android:gravity="center"
         android:textColor="@color/black"
         android:layout_marginBottom="36dp"/>
@@ -75,7 +75,7 @@
     <!-- Major Input Field -->
     <EditText
         android:id="@+id/edit_major"
-        android:hint="Enter Major (Optional)"
+        android:hint="Enter Major:"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:inputType="text"
