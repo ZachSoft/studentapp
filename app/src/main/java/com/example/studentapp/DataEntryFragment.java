@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment;
 
 public class DataEntryFragment extends Fragment {
 
+//    Variables initialization
     private EditText editName, editAge, editGrade, editMajor;
     private Button submitButton;
     private OnDataSubmitListener dataSubmitListener;  // Define the listener
@@ -50,7 +51,7 @@ public class DataEntryFragment extends Fragment {
 
         return view;
     }
-
+    //    submit data function
     private void submitData() {
         // Get input values
         String name = editName.getText().toString().trim();
