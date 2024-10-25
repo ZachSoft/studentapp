@@ -14,9 +14,9 @@
         android:textSize="22sp"
         android:textStyle="bold"
         android:gravity="center"
-        android:textColor="@color/black"
+        android:textColor="@color/dark_red"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="26dp"/>
 
     <!-- Subtitle TextView -->
     <TextView
@@ -26,8 +26,8 @@
         android:text="Please fill in the fields above and click Submit to continue."
         android:textSize="16sp"
         android:gravity="center"
-        android:textColor="@color/dark_red"
-        android:layout_marginBottom="16dp"/>
+        android:textColor="@color/black"
+        android:layout_marginBottom="36dp"/>
 
 
     <!-- Name Input Field -->
